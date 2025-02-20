@@ -103,6 +103,30 @@ Rules should be added as JSON files in `src/rules/` following this structure:
 }
 ```
 
+The rule will be transformed into an MDC file with frontmatter:
+```markdown
+---
+description: Brief description
+globs: glob patterns
+---
+
+# Rule Title
+
+// Description: Brief description
+// Recommended Globs: glob patterns
+
+## Section
+- Guideline 1
+- Guideline 2
+```
+
+### Rule Components
+- `category`: One of `code_style`, `frontend`, `backend`, `database`
+- `title`: Clear, concise title in Title Case
+- `description`: Single sentence explaining the rule's purpose
+- `recommended_globs`: Array of glob patterns for file matching (e.g., `["**/*.{js,ts}"]`)
+- `content`: Array of markdown strings forming the rule documentation
+
 ## License
 
 MIT
