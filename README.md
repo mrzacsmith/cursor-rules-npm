@@ -15,15 +15,6 @@ npm install -g @mrzacsmith/cursor-rules
 cursor-rules
 ```
 
-## Important Note
-⚠️ After installing rules, you MUST add a description in the frontmatter of each `.mdc` file for the rules to work properly. Example:
-```markdown
----
-description: Standardized commit message format for consistent version control history
-globs: **/*.{js,jsx,ts,tsx,md,mdx}
----
-```
-
 ## Features
 
 - 🎯 Interactive rule selection
