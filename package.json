@@ -1,0 +1,45 @@
+{
+  "name": "@mrzacsmith/cursor-rules",
+  "version": "0.1.1",
+  "description": "Interactive CLI to install Cursor AI rules",
+  "type": "module",
+  "main": "src/cli/index.js",
+  "bin": {
+    "@mrzacsmith/cursor-rules": "src/cli/index.js",
+    "cursor-rules": "src/cli/index.js"
+  },
+  "scripts": {
+    "start": "node src/cli/index.js",
+    "release:major": "npm version major -m 'Release: major version %s'",
+    "release:minor": "npm version minor -m 'Release: minor version %s'",
+    "release:patch": "npm version patch -m 'Release: patch version %s'",
+    "prepublishOnly": "npm test",
+    "test": "echo \"No tests yet\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mrzacsmith/cursor-rules-npm.git"
+  },
+  "keywords": [
+    "cursor",
+    "rules",
+    "cli",
+    "codeshock",
+    "ai",
+    "development",
+    "standards"
+  ],
+  "author": "mrzacsmith",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "fs-extra": "^11.2.0",
+    "prompts": "^2.4.2"
+  },
+  "engines": {
+    "node": ">=14.16"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

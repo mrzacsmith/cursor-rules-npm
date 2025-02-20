@@ -1,16 +1,27 @@
-# @codeshock/rules
+# @mrzacsmith/cursor-rules
 
 Interactive CLI to install Cursor AI rules for your project.
 
 ## Usage
 
+Run with npx (recommended):
 ```bash
-# Run directly with npx (recommended)
-npx @codeshock/rules
+npx @mrzacsmith/cursor-rules
+```
 
-# Or install globally and run
-npm install -g @codeshock/rules
+Or install globally:
+```bash
+npm install -g @mrzacsmith/cursor-rules
 cursor-rules
+```
+
+## Important Note
+⚠️ After installing rules, you MUST add a description in the frontmatter of each `.mdc` file for the rules to work properly. Example:
+```markdown
+---
+description: Standardized commit message format for consistent version control history
+globs: **/*.{js,jsx,ts,tsx,md,mdx}
+---
 ```
 
 ## Features
@@ -29,7 +40,7 @@ cursor-rules
 
 ## How it Works
 
-1. Run `npx @codeshock/rules`
+1. Run `npx @mrzacsmith/cursor-rules`
 2. Select a category using arrow keys
 3. Choose rules using space bar
 4. Navigate back to categories with enter
@@ -107,4 +118,4 @@ MIT
 
 ## Author
 
-CodeShock # cursor-rules-npm
+mrzacsmith

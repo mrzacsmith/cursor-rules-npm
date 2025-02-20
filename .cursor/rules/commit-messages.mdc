@@ -1,0 +1,19 @@
+---
+description: Standardized commit message format for consistent version control history
+globs: 
+---
+## Commit Messages
+
+// Description: Standardized commit message format for consistent version control history
+// Recommended Globs: **/*.{js,jsx,ts,tsx,md,mdx}
+
+- When you finish applying changes, the last line of the message should "Don't forget to commit!" and give me a commit command as well.
+- Always prefix Commit Messages in the following way. No exceptions!
+
+"Feat(component): add new component"
+"Fix(api): fix api error"
+"Docs(readme): update readme"
+"Refactor(utils): refactor utils"
+"Style(tailwind): add new tailwind class"
+"Test(unit): add unit test"
+"Chore(deps): update dependencies"
