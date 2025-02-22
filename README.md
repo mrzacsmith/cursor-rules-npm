@@ -45,6 +45,13 @@ cursor-rules
   - Enforces semantic commit messages
   - Includes type, scope, and description
   - Example: `Feat(component): add new component`
+- **[✓] Python Development**: Modern Python development practices with type hints and testing
+  - Type annotations and docstrings
+  - Project structure and organization
+  - Testing with pytest
+  - Error handling and logging
+  - Environment configuration
+  - CI/CD with GitHub Actions
 - **[✓] Yoda Quote Endings**: End each Cursor chat with wisdom
   - Adds personality to coding sessions
   - Provides Yoda-style encouragement
@@ -73,6 +80,17 @@ cursor-rules
 - **[Coming Soon] MongoDB Patterns**: Schema design and query optimization
 - **[Coming Soon] PostgreSQL Standards**: Database structure and performance
 - **[Coming Soon] Redis Caching**: Caching strategies and patterns
+
+### Browser Extension
+- **[✓] Chrome Extension Development**: Best practices for modern Chrome Extension development using TypeScript and Manifest V3
+  - Project structure and organization
+  - TypeScript integration and type safety
+  - Manifest V3 configuration
+  - Security best practices
+  - Performance optimization
+  - Cross-browser compatibility
+- **[Coming Soon] Firefox Add-on Development**: Guidelines for Firefox extension development
+- **[Coming Soon] Web Extension APIs**: Cross-browser extension development patterns
 
 ## Contributing
 
