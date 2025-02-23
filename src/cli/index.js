@@ -12,6 +12,7 @@ const __dirname = path.dirname(__filename)
 const rules = {
   code_style: [
     { title: 'Commit Messages', value: 'commit-messages' },
+    { title: 'NPM Package Check', value: 'npm-package-check' },
     { title: 'Python Development', value: 'python-development' },
     { title: 'Yoda Quote Endings', value: 'yoda-quotes' },
   ],

@@ -47,6 +47,12 @@ cursor-rules
   - Enforces semantic commit messages
   - Includes type, scope, and description
   - Example: `Feat(component): add new component`
+- **[✓] NPM Package Check**: Best practices for checking and installing NPM packages before use
+  - Package dependency verification
+  - Automatic installation commands
+  - Dependency management
+  - Error handling
+  - Development workflow optimization
 - **[✓] Python Development**: Modern Python development practices with type hints and testing
   - Type annotations and docstrings
   - Project structure and organization
