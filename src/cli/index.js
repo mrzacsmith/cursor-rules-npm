@@ -77,14 +77,22 @@ async function main() {
     const ruleResponse = await prompts({
       type: 'multiselect',
       name: 'rules',
-      message: `Select ${category} rules\n\nInstructions:\n↑/↓: Highlight option\n</>/[space]: Toggle selection\na: Toggle all\nenter/return: Complete answer\n\n`,
+      message: `Select ${category} rules`,
       choices: rules[category]
         .sort((a, b) => a.title.localeCompare(b.title))
         .map((rule) => ({
           ...rule,
           selected: selectedRules.includes(rule.value),
         })),
-      hint: '- Space to select. Return to submit\n\n',
+      instructions: `
+Instructions:
+  ↑/↓: Highlight option
+  </>/[space]: Toggle selection
+  a: Toggle all
+  enter/return: Complete answer
+
+`,
+      hint: '\n\n',
     })
 
     if (ruleResponse.rules) {
