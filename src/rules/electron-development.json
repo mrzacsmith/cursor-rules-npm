@@ -1,5 +1,5 @@
 {
-  "category": "desktop_extension",
+  "category": "browser_extension",
   "title": "Electron Development",
   "description": "Best practices for building secure and performant Electron applications with modern JavaScript",
   "recommended_globs": [

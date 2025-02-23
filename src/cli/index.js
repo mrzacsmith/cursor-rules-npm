@@ -12,11 +12,28 @@ const __dirname = path.dirname(__filename)
 const rules = {
   code_style: [
     { title: 'Commit Messages', value: 'commit-messages' },
+    { title: 'Python Development', value: 'python-development' },
     { title: 'Yoda Quote Endings', value: 'yoda-quotes' },
   ],
-  frontend: [{ title: 'Tailwind Standards', value: 'tailwind' }],
+  frontend: [
+    { title: 'Tailwind Standards', value: 'tailwind' },
+    { title: 'React GraphQL Apollo', value: 'react-graphql-apollo' },
+    { title: 'Mobile First Web Development', value: 'mobile-first-web' },
+    { title: 'Next.js App Router', value: 'nextjs-app-router' },
+    { title: 'Modern React Next.js', value: 'modern-react-nextjs' },
+  ],
   backend: [{ title: 'Firebase Integration', value: 'firebase' }],
   database: [],
+  browser_extension: [
+    { title: 'Chrome Extension Development', value: 'chrome-extension-development' },
+    { title: 'Electron Development', value: 'electron-development' },
+  ],
+  mobile: [
+    { title: 'Flutter Development', value: 'flutter-development' },
+    { title: 'React Native Expo', value: 'react-native-expo' },
+    { title: 'SwiftUI Development', value: 'swiftui-development' },
+    { title: 'Jetpack Compose', value: 'jetpack-compose' },
+  ],
 }
 
 const categories = [
@@ -24,6 +41,8 @@ const categories = [
   { title: 'Frontend', value: 'frontend' },
   { title: 'Backend', value: 'backend' },
   { title: 'Database', value: 'database' },
+  { title: 'Desktop / Extension', value: 'browser_extension' },
+  { title: 'Mobile', value: 'mobile' },
 ]
 
 async function main() {
