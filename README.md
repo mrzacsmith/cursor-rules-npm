@@ -60,6 +60,12 @@ cursor-rules
   - Error handling and logging
   - Environment configuration
   - CI/CD with GitHub Actions
+- **[✓] Terminal Path Verification**: Best practices for verifying paths and locations before executing terminal commands
+  - Directory verification with pwd and ls
+  - Path existence checks
+  - File operation safety
+  - Error prevention
+  - Automated verification in scripts
 - **[✓] Yoda Quote Endings**: End each Cursor chat with wisdom
   - Adds personality to coding sessions
   - Provides Yoda-style encouragement

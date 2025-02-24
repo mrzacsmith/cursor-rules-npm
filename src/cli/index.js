@@ -14,6 +14,7 @@ const rules = {
     { title: 'Commit Messages', value: 'commit-messages' },
     { title: 'NPM Package Check', value: 'npm-package-check' },
     { title: 'Python Development', value: 'python-development' },
+    { title: 'Terminal Path Verification', value: 'terminal-path-verification' },
     { title: 'Yoda Quote Endings', value: 'yoda-quotes' },
   ],
   frontend: [
