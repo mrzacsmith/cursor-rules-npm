@@ -95,6 +95,12 @@ cursor-rules
   - Performance optimization
   - State management with nuqs
   - Shadcn UI integration
+- **[✓] Next.js Supabase Auth**: Guidelines for writing Next.js apps with Supabase Auth
+  - Modern SSR authentication patterns
+  - Correct cookie handling
+  - Middleware implementation
+  - Browser and server client setup
+  - Security best practices
 - **[✓] Modern React Next.js**: Best practices for modern React and Next.js development with TypeScript, Tailwind CSS, and accessibility
   - Component design patterns
   - Custom hooks and utilities

@@ -22,6 +22,7 @@ const rules = {
     { title: 'React GraphQL Apollo', value: 'react-graphql-apollo' },
     { title: 'Mobile First Web Development', value: 'mobile-first-web' },
     { title: 'Next.js App Router', value: 'nextjs-app-router' },
+    { title: 'Next.js Supabase Auth', value: 'nextjs-supabase-auth' },
     { title: 'Modern React Next.js', value: 'modern-react-nextjs' },
   ],
   backend: [{ title: 'Firebase Integration', value: 'firebase' }],

@@ -1,6 +1,6 @@
 {
   "name": "@mrzacsmith/cursor-rules",
-  "version": "0.2.9",
+  "version": "0.3.0",
   "description": "Interactive CLI to install Cursor AI rules",
   "type": "module",
   "main": "src/cli/index.js",
