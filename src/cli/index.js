@@ -37,7 +37,8 @@ const rules = {
     { title: 'SwiftUI Development', value: 'swiftui-development' },
     { title: 'Jetpack Compose', value: 'jetpack-compose' },
   ],
-  mcp_servers: [{ title: 'Debug Commands', value: 'debug-commands' }],
+  mcp_servers: [],
+  mcp_servers_browser_tools: [{ title: 'Debug Commands', value: 'debug-commands' }],
 }
 
 const categories = [
@@ -47,7 +48,11 @@ const categories = [
   { title: 'Database', value: 'database' },
   { title: 'Desktop / Extension', value: 'browser_extension' },
   { title: 'Mobile', value: 'mobile' },
-  { title: 'MCP Servers', value: 'mcp_servers' },
+  {
+    title: 'MCP Servers',
+    value: 'mcp_servers',
+    subcategories: [{ title: 'Browser Tools', value: 'mcp_servers_browser_tools' }],
+  },
 ]
 
 async function main() {
@@ -55,6 +60,7 @@ async function main() {
 
   const selectedRules = []
   let done = false
+  let lastCategoryIndex = 0 // Track the last selected category index
 
   while (!done) {
     // Category selection
@@ -63,7 +69,7 @@ async function main() {
       name: 'category',
       message: 'Select a category or press Enter to finish',
       choices: [...categories, { title: '✓ Done', value: 'done' }],
-      initial: 0,
+      initial: lastCategoryIndex, // Start at the last selected category
     })
 
     if (!categoryResponse.category || categoryResponse.category === 'done') {
@@ -71,7 +77,88 @@ async function main() {
       continue
     }
 
-    const category = categoryResponse.category
+    // Save the current category index for next time
+    lastCategoryIndex = categories.findIndex((c) => c.value === categoryResponse.category)
+    if (lastCategoryIndex === -1) lastCategoryIndex = 0
+
+    let category = categoryResponse.category
+    const selectedCategory = categories.find((c) => c.value === category)
+
+    // Check if category has subcategories
+    if (
+      selectedCategory &&
+      selectedCategory.subcategories &&
+      selectedCategory.subcategories.length > 0
+    ) {
+      let inSubcategory = true
+      let lastSubcategoryIndex = 0 // Track the last selected subcategory index
+
+      while (inSubcategory) {
+        // Subcategory selection
+        const subcategoryResponse = await prompts({
+          type: 'select',
+          name: 'subcategory',
+          message: `Select a ${selectedCategory.title} subcategory`,
+          choices: [...selectedCategory.subcategories, { title: '← Back', value: 'back' }],
+          initial: lastSubcategoryIndex, // Start at the last selected subcategory
+        })
+
+        if (!subcategoryResponse.subcategory || subcategoryResponse.subcategory === 'back') {
+          inSubcategory = false
+          continue
+        }
+
+        // Save the current subcategory index for next time
+        lastSubcategoryIndex = selectedCategory.subcategories.findIndex(
+          (sc) => sc.value === subcategoryResponse.subcategory
+        )
+        if (lastSubcategoryIndex === -1) lastSubcategoryIndex = 0
+
+        // Use subcategory for rule selection
+        category = subcategoryResponse.subcategory
+
+        if (rules[category].length === 0) {
+          console.log(chalk.yellow(`\nNo rules available yet for ${category}\n`))
+          continue
+        }
+
+        // Rule selection for the chosen subcategory
+        const ruleResponse = await prompts({
+          type: 'multiselect',
+          name: 'rules',
+          message: `Select ${category} rules`,
+          choices: rules[category]
+            .sort((a, b) => a.title.localeCompare(b.title))
+            .map((rule) => ({
+              ...rule,
+              selected: selectedRules.includes(rule.value),
+            })),
+          instructions: `
+Instructions:
+  ↑/↓: Highlight option
+  </>/[space]: Toggle selection
+  a: Toggle all
+  enter/return: Complete answer
+
+`,
+          hint: '\n\n',
+        })
+
+        if (ruleResponse.rules) {
+          // Remove any previously selected rules from this category
+          const categoryRuleValues = rules[category].map((r) => r.value)
+          selectedRules.splice(
+            0,
+            selectedRules.length,
+            ...selectedRules.filter((r) => !categoryRuleValues.includes(r)),
+            ...ruleResponse.rules
+          )
+        }
+      }
+
+      // Skip the rest of the loop after handling subcategories
+      continue
+    }
 
     if (rules[category].length === 0) {
       console.log(chalk.yellow(`\nNo rules available yet for ${category}\n`))

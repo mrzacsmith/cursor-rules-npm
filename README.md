@@ -26,6 +26,7 @@ cursor-rules
   - Mobile
   - Desktop & Extension Development
   - MCP Servers
+    - Browser Tools
 - 🔄 Safe installation - won't overwrite existing rules without permission
 - 📝 Each rule includes:
   - Description
@@ -176,6 +177,7 @@ cursor-rules
 - **[Coming Soon] Web Extension APIs**: Cross-browser extension development patterns
 
 ### MCP Servers
+#### Browser Tools
 - **[✓] Debug Commands**: This tool performs debugging steps for applications
   - Console log collection
   - Error tracking
@@ -231,7 +233,7 @@ globs: glob patterns
 ```
 
 ### Rule Components
-- `category`: One of `code_style`, `frontend`, `backend`, `database`, `mobile`, `desktop_extension`, `mcp_servers`
+- `category`: One of `code_style`, `frontend`, `backend`, `database`, `mobile`, `desktop_extension`, `mcp_servers_browser_tools`
 - `title`: Clear, concise title in Title Case
 - `description`: Single sentence explaining the rule's purpose
 - `recommended_globs`: Array of glob patterns for file matching (e.g., `["**/*.{js,ts}"]`)
