@@ -37,6 +37,7 @@ const rules = {
     { title: 'SwiftUI Development', value: 'swiftui-development' },
     { title: 'Jetpack Compose', value: 'jetpack-compose' },
   ],
+  mcp_servers: [{ title: 'Debug Commands', value: 'debug-commands' }],
 }
 
 const categories = [
@@ -46,6 +47,7 @@ const categories = [
   { title: 'Database', value: 'database' },
   { title: 'Desktop / Extension', value: 'browser_extension' },
   { title: 'Mobile', value: 'mobile' },
+  { title: 'MCP Servers', value: 'mcp_servers' },
 ]
 
 async function main() {

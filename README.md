@@ -25,6 +25,7 @@ cursor-rules
   - Database
   - Mobile
   - Desktop & Extension Development
+  - MCP Servers
 - 🔄 Safe installation - won't overwrite existing rules without permission
 - 📝 Each rule includes:
   - Description
@@ -174,6 +175,15 @@ cursor-rules
 - **[Coming Soon] Firefox Add-on Development**: Guidelines for Firefox extension development
 - **[Coming Soon] Web Extension APIs**: Cross-browser extension development patterns
 
+### MCP Servers
+- **[✓] Debug Commands**: This tool performs debugging steps for applications
+  - Console log collection
+  - Error tracking
+  - Network request monitoring
+  - Screenshot capture
+  - Automated analysis
+  - Specialized debugging commands
+
 ## Contributing
 
 1. Fork the repository
@@ -221,7 +231,7 @@ globs: glob patterns
 ```
 
 ### Rule Components
-- `category`: One of `code_style`, `frontend`, `backend`, `database`, `mobile`, `desktop_extension`
+- `category`: One of `code_style`, `frontend`, `backend`, `database`, `mobile`, `desktop_extension`, `mcp_servers`
 - `title`: Clear, concise title in Title Case
 - `description`: Single sentence explaining the rule's purpose
 - `recommended_globs`: Array of glob patterns for file matching (e.g., `["**/*.{js,ts}"]`)
