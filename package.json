@@ -5,7 +5,6 @@
   "type": "module",
   "main": "src/cli/index.js",
   "bin": {
-    "@mrzacsmith/cursor-rules": "src/cli/index.js",
     "cursor-rules": "src/cli/index.js"
   },
   "scripts": {
