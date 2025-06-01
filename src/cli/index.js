@@ -70,17 +70,25 @@ async function main() {
 
   while (!done) {
     // Category selection
-    const categoryResponse = await prompts({
-      type: 'select',
-      name: 'category',
-      message: 'Select a category or press Enter to finish',
-      choices: [...categories, { title: '✓ Done', value: 'done' }],
-      initial: lastCategoryIndex, // Start at the last selected category
-    })
+    const categoryResponse = await prompts(
+      {
+        type: 'select',
+        name: 'category',
+        message: 'Select a category or press Enter to finish',
+        choices: [...categories, { title: '✓ Done', value: 'done' }],
+        initial: lastCategoryIndex, // Start at the last selected category
+      },
+      {
+        onCancel: () => {
+          console.log(chalk.yellow('\n👋 Operation cancelled. Exiting...\n'))
+          process.exit(0)
+        },
+      }
+    )
 
     if (!categoryResponse.category || categoryResponse.category === 'done') {
       done = true
-      continue
+      break
     }
 
     // Save the current category index for next time
@@ -101,13 +109,21 @@ async function main() {
 
       while (inSubcategory) {
         // Subcategory selection
-        const subcategoryResponse = await prompts({
-          type: 'select',
-          name: 'subcategory',
-          message: `Select a ${selectedCategory.title} subcategory`,
-          choices: [...selectedCategory.subcategories, { title: '← Back', value: 'back' }],
-          initial: lastSubcategoryIndex, // Start at the last selected subcategory
-        })
+        const subcategoryResponse = await prompts(
+          {
+            type: 'select',
+            name: 'subcategory',
+            message: `Select a ${selectedCategory.title} subcategory`,
+            choices: [...selectedCategory.subcategories, { title: '← Back', value: 'back' }],
+            initial: lastSubcategoryIndex, // Start at the last selected subcategory
+          },
+          {
+            onCancel: () => {
+              console.log(chalk.yellow('\n👋 Operation cancelled. Exiting...\n'))
+              process.exit(0)
+            },
+          }
+        )
 
         if (!subcategoryResponse.subcategory || subcategoryResponse.subcategory === 'back') {
           inSubcategory = false
@@ -129,17 +145,18 @@ async function main() {
         }
 
         // Rule selection for the chosen subcategory
-        const ruleResponse = await prompts({
-          type: 'multiselect',
-          name: 'rules',
-          message: `Select ${category} rules`,
-          choices: rules[category]
-            .sort((a, b) => a.title.localeCompare(b.title))
-            .map((rule) => ({
-              ...rule,
-              selected: selectedRules.includes(rule.value),
-            })),
-          instructions: `
+        const ruleResponse = await prompts(
+          {
+            type: 'multiselect',
+            name: 'rules',
+            message: `Select ${category} rules`,
+            choices: rules[category]
+              .sort((a, b) => a.title.localeCompare(b.title))
+              .map((rule) => ({
+                ...rule,
+                selected: selectedRules.includes(rule.value),
+              })),
+            instructions: `
 Instructions:
   ↑/↓: Highlight option
   </>/[space]: Toggle selection
@@ -147,8 +164,15 @@ Instructions:
   enter/return: Complete answer
 
 `,
-          hint: '\n\n',
-        })
+            hint: '\n\n',
+          },
+          {
+            onCancel: () => {
+              console.log(chalk.yellow('\n👋 Operation cancelled. Exiting...\n'))
+              process.exit(0)
+            },
+          }
+        )
 
         if (ruleResponse.rules) {
           // Remove any previously selected rules from this category
@@ -172,17 +196,18 @@ Instructions:
     }
 
     // Rule selection for the chosen category
-    const ruleResponse = await prompts({
-      type: 'multiselect',
-      name: 'rules',
-      message: `Select ${category} rules`,
-      choices: rules[category]
-        .sort((a, b) => a.title.localeCompare(b.title))
-        .map((rule) => ({
-          ...rule,
-          selected: selectedRules.includes(rule.value),
-        })),
-      instructions: `
+    const ruleResponse = await prompts(
+      {
+        type: 'multiselect',
+        name: 'rules',
+        message: `Select ${category} rules`,
+        choices: rules[category]
+          .sort((a, b) => a.title.localeCompare(b.title))
+          .map((rule) => ({
+            ...rule,
+            selected: selectedRules.includes(rule.value),
+          })),
+        instructions: `
 Instructions:
   ↑/↓: Highlight option
   </>/[space]: Toggle selection
@@ -190,8 +215,15 @@ Instructions:
   enter/return: Complete answer
 
 `,
-      hint: '\n\n',
-    })
+        hint: '\n\n',
+      },
+      {
+        onCancel: () => {
+          console.log(chalk.yellow('\n👋 Operation cancelled. Exiting...\n'))
+          process.exit(0)
+        },
+      }
+    )
 
     if (ruleResponse.rules) {
       // Remove any previously selected rules from this category
