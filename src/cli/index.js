@@ -10,6 +10,11 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 const rules = {
+  setup: [
+    { title: 'Create Feature PRD', value: 'create-feature-prd' },
+    { title: 'Generate Tasks', value: 'generate-tasks' },
+    { title: 'Process Task List', value: 'process-task-list' },
+  ],
   code_style: [
     { title: 'Commit Messages', value: 'commit-messages' },
     { title: 'NPM Package Check', value: 'npm-package-check' },
@@ -42,6 +47,7 @@ const rules = {
 }
 
 const categories = [
+  { title: 'Setup', value: 'setup' },
   { title: 'Code Style', value: 'code_style' },
   { title: 'Frontend', value: 'frontend' },
   { title: 'Backend', value: 'backend' },
