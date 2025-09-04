@@ -13,6 +13,7 @@ const rules = {
   setup: [
     { title: 'Create Feature PRD', value: 'create-feature-prd' },
     { title: 'Generate Tasks', value: 'generate-tasks' },
+    { title: 'Linear Issue Management', value: 'linear-issue-management' },
     { title: 'Process Task List', value: 'process-task-list' },
   ],
   code_style: [
