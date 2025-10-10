@@ -58,12 +58,13 @@ cursor-rules
   - Structured output format with relevant files section
   - Saves as `tasks-[prd-file-name].md` for easy tracking
   - Junior developer-friendly task breakdown
-- **[✓] Linear Issue Management**: Standardizes Linear issue creation and maintains up-to-date project information
-  - Project prefixing and default assignment rules
-  - Automated documentation maintenance for teams, projects, and users
-  - Weekly metadata updates and configuration management
-  - Structured directory setup for `.cursor/linear/` documentation
-  - Consistent issue formatting and field requirements
+- **[✓] Linear Issue Management**: Standardizes Linear issue creation with automatic project and team detection
+  - Self-configuring setup on first use - builds `.cursor/linear-config.md` after prompting for defaults
+  - Automatic team, project, and assignee detection from configuration
+  - Manual setup trigger: say **"initiate linear issue rule"** or **"setup linear config"**
+  - Simple single-file configuration (no complex directory structures)
+  - Override defaults on a per-issue basis when needed
+  - No maintenance required - static configuration
 - **[✓] Process Task List**: Guidelines for managing task lists in markdown files to track progress on completing a PRD
   - One sub-task at a time workflow with user approval gates
   - Clear completion protocol with checkbox marking system
