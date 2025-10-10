@@ -70,6 +70,13 @@ cursor-rules
   - File maintenance requirements and progress tracking
   - AI instructions for proper task execution
   - Structured approach to feature implementation
+- **[✓] Semgrep MCP Security Scan**: Mandatory security scanning of all generated code using Semgrep MCP server
+  - Automatic security vulnerability detection in all generated code
+  - Integration with Semgrep MCP server tools
+  - Mandatory scan before task completion
+  - Clear workflow for handling security findings
+  - Support for multiple programming languages
+  - Best practices for secure code generation
 
 ### Code Style
 - **[✓] Commit Messages**: Standardized commit message format for consistent version control history

@@ -15,6 +15,7 @@ const rules = {
     { title: 'Generate Tasks', value: 'generate-tasks' },
     { title: 'Linear Issue Management', value: 'linear-issue-management' },
     { title: 'Process Task List', value: 'process-task-list' },
+    { title: 'Semgrep MCP Security Scan', value: 'semgrep-security-scan' },
   ],
   code_style: [
     { title: 'Commit Messages', value: 'commit-messages' },
